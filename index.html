@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Calculator</h1>
+
+
+<form action="insert_mysql.php" method="post">
+
+First number:<input type="text" name="first_int" id="first_int"><br><br>
+
+Operand:<input type="text" name="operation" id="operation"><br><br>
+
+Second number:<input type="text" name="second_int" id="second_int"><br><br>
+
+<h1 type="text" name="answer" id="answer"></h1>
+
+<button onclick="calculate()"> Calculate </button>
+
+<input type="submit">
+
+</form>
+
+<script>
+
+function calculate()
+{
+        var field1=document.getElementById("first_int").value;
+        var field2=document.getElementById("second_int").value;
+        var field3=document.getElementById("operation").value;
+
+        if (field3=="+")
+            {
+                var result=parseFloat(field1)+parseFloat(field2);
+		   
+            }
+        if (field3=="-")
+            {
+                var result=parseFloat(field1)-parseFloat(field2);
+		   
+            }
+        if (field3=="*")
+            {
+                var result=parseFloat(field1)*parseFloat(field2);
+		   
+            }
+        if (field3=="/")
+            {
+                var result=parseFloat(field1)/parseFloat(field2);
+		   
+            }
+
+
+
+
+
+        if(!isNaN(result))
+        {
+                document.getElementById("answer").innerHTML=result;
+        }
+}
+
+ </script>
+
+
+
+
+<p>Click the "Calculate" button to calculate.</p>
+</body>
+</html>
