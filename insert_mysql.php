@@ -18,7 +18,7 @@ $operation = mysqli_real_escape_string($conn,$_REQUEST['operation']);
 $sql ="INSERT INTO test_table (first_int, second_int, operand) VALUES ('$first_int', '$second_int', '$operation')";
 
 if(mysqli_query($conn, $sql)){
-echo "Records updated";
+echo "Records updated, Bra jobbat!!";
 }else{
 	echo "ERROR $sql"  .
 		mysqli_error($conn);
