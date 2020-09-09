@@ -11,11 +11,11 @@ if($conn === false){
 $first_int = mysqli_real_escape_string($conn,$_REQUEST['first_int']);
 $second_int = mysqli_real_escape_string($conn,$_REQUEST['second_int']);
 $operation = mysqli_real_escape_string($conn,$_REQUEST['operation']);
-#$answer = mysqli_real_escape_string($conn,$_REQUEST['result']);
+$answer = mysqli_real_escape_string($conn,$_REQUEST['my_result']);
 
 
 
-$sql ="INSERT INTO test_table (first_int, second_int, operand) VALUES ('$first_int', '$second_int', '$operation')";
+$sql ="INSERT INTO test_table (first_int, second_int, operand, result) VALUES ('$first_int', '$second_int', '$operation', '$answer')";
 
 if(mysqli_query($conn, $sql)){
 echo "Records updated, Bra jobbat!!";

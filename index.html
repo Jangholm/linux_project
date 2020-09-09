@@ -13,11 +13,14 @@ Operand:<input type="text" name="operation" id="operation"><br><br>
 
 Second number:<input type="text" name="second_int" id="second_int"><br><br>
 
+<input type="hidden" name="my_result" id="my_result" value="">
+
+
 <h1 type="text" name="answer" id="answer"></h1>
 
 <button onclick="calculate()"> Calculate </button>
 
-<input type="submit">
+
 
 </form>
 
@@ -28,7 +31,7 @@ function calculate()
         var field1=document.getElementById("first_int").value;
         var field2=document.getElementById("second_int").value;
         var field3=document.getElementById("operation").value;
-
+	
         if (field3=="+")
             {
                 var result=parseFloat(field1)+parseFloat(field2);
@@ -50,13 +53,10 @@ function calculate()
 		   
             }
 
-
-
-
-
         if(!isNaN(result))
         {
                 document.getElementById("answer").innerHTML=result;
+		document.getElementById("my_result").value=result;
         }
 }
 
